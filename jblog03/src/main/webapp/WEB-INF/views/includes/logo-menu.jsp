@@ -7,5 +7,5 @@
 			<li><a href="${pageContext.request.contextPath }/user/login">로그인</a></li>
 			<li><a href="${pageContext.request.contextPath }/user/join">회원가입</a></li>
 			<li><a href="${pageContext.request.contextPath }">로그아웃</a></li>
-			<li><a href="${pageContext.request.contextPath }">내블로그</a></li>
+			<li><a href="${pageContext.request.contextPath }/{id}/admin/basic">내블로그</a></li>
 		</ul>

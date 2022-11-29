@@ -5,9 +5,12 @@ import java.util.Optional;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.bitacademy.jblog.vo.UserVo;
 
 @Controller
-@RequestMapping("/{id:(?!assets).*}")  // assets 없어도되고 있어도되고 assets으로 시작하는 모든 것
+@RequestMapping("/{id:(?!assets).*}")  // assets 없어도되고 있어도되고 assets으로 시작하지 않는 모든 것
 public class BlogController {
 
 	@RequestMapping({"", "/{pathNo1}", "/{pathNo1}/{pathNo2}"})
@@ -41,8 +44,15 @@ public class BlogController {
 		return "blog/admin-category";
 	}
 	
-	@RequestMapping("/admin/write")
+	@RequestMapping(value="/admin/write", method=RequestMethod.GET)
 	public String adminWrite(@PathVariable("id") String id) {
 		return "blog/admin-write";
+	}
+	
+	@RequestMapping(value="/admin/write", method=RequestMethod.POST)
+	public String adminWrite(
+			@PathVariable("id") String id,
+			UserVo suerVo) {
+		return "redirect:/blog/admin-write";
 	}
 }
