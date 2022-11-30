@@ -8,7 +8,6 @@ import com.bitacademy.jblog.vo.UserVo;
 
 @Repository
 public class UserRepository {
-	
 	@Autowired
 	private SqlSession sqlSession;
 

@@ -8,7 +8,6 @@
 		  into user
 		values(#{id }, #{name }, #{password });
 		]]>
-	
 	</insert>
 
 </mapper>
