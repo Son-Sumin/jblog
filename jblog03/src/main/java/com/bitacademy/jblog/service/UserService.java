@@ -12,6 +12,6 @@ public class UserService {
 	private UserRepository userRepository;
 
 	public void join(UserVo userVo) {
-		
+		userRepository.insert(userVo);
 	}
 }
