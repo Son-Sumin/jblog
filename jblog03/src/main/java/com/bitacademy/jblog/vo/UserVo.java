@@ -4,6 +4,7 @@ public class UserVo {
 	private String id;
 	private String name;
 	private String password;
+	private String role;
 //	private String blogTitle;
 //	private String blogProfile;
 //	private long categoryNo;
@@ -27,9 +28,17 @@ public class UserVo {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
 	@Override
 	public String toString() {
-		return "UserVo [id=" + id + ", name=" + name + ", password=" + password + "]";
+		return "UserVo [id=" + id + ", name=" + name + ", password=" + password + ", role=" + role + "]";
 	}
 	
 	
