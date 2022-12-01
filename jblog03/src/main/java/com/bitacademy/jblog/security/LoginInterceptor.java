@@ -7,8 +7,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-import com.bitacademy.mysite.service.UserService;
-import com.bitacademy.mysite.vo.UserVo;
+import com.bitacademy.jblog.service.UserService;
+import com.bitacademy.jblog.vo.UserVo;
 
 
 // 필요한 interceptor만 구현하면 된다!
