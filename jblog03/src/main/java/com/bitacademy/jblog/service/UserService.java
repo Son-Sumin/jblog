@@ -14,4 +14,9 @@ public class UserService {
 	public void join(UserVo userVo) {
 		userRepository.insert(userVo);
 	}
+
+	public UserVo findId(String id, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

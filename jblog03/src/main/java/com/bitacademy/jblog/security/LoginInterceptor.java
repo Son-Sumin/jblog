@@ -19,13 +19,13 @@ public class LoginInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		String email = request.getParameter("email");
+		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		
-		UserVo authUser = userService.findUser(email, password);
+		UserVo authUser = userService.findId(id, password);
 		
 		if(authUser == null) {
-			request.setAttribute("email", email);
+			request.setAttribute("email", id);
 			request.getRequestDispatcher("/WEB-INF/views/user/login.jsp").forward(request, response);
 			return false;
 		}
