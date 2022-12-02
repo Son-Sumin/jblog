@@ -1,5 +1,8 @@
 package com.bitacademy.jblog.repository;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -14,6 +17,13 @@ public class UserRepository {
 	public boolean insert(UserVo userVo) {
 		int count = sqlSession.insert("user.insert", userVo);
 		return count == 1;
+	}
+	
+	public UserVo findByIdPassword(String id, String pasword) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("id", id);
+		map.put("password", map);
+		return sqlSession.selectOne("user.findByIdPassword", map);
 	}
 	
 	

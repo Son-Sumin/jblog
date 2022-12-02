@@ -9,5 +9,13 @@
 		values(#{id }, #{name }, #{password });
 		]]>
 	</insert>
+	
+	<select id="findByIdPassword" resultType="uservo" parameterType="map">
+		<![CDATA[
+		select id, name, role 
+		  from user 
+		 where id=#{id } and password=#{password }
+		]]>
+	</select>
 
 </mapper>

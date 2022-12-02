@@ -16,7 +16,6 @@ public class UserService {
 	}
 
 	public UserVo findId(String id, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		return userRepository.findByIdPassword(id, password);
 	}
 }
