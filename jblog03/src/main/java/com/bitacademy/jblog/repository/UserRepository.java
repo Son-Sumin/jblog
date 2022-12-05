@@ -19,10 +19,10 @@ public class UserRepository {
 		return count == 1;
 	}
 	
-	public UserVo findByIdPassword(String id, String pasword) {
+	public UserVo findByIdPassword(String id, String password) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("id", id);
-		map.put("password", map);
+		map.put("password", password);
 		return sqlSession.selectOne("user.findByIdPassword", map);
 	}
 	
