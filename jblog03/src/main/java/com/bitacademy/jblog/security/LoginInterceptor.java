@@ -25,7 +25,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 		UserVo authUser = userService.findId(id, password);
 		
 		if(authUser == null) {
-			request.setAttribute("email", id);
+			request.setAttribute("id", id);
 			request.getRequestDispatcher("/WEB-INF/views/user/login.jsp").forward(request, response);
 			return false;
 		}

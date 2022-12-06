@@ -33,6 +33,6 @@ public class UserController {
 	
 	@RequestMapping("/login")
 	public String login() {
-		return "/login";
+		return "redirect:/blog/admin-basic";
 	}
 }
