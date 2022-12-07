@@ -13,7 +13,7 @@
 					<c:otherwise>
 						<li><a href="${pageContext.request.contextPath }">JBLOG Home</a></li>
 						<li><a href="${pageContext.request.contextPath }/user/logout">로그아웃</a></li>
-						<li><a href="${pageContext.request.contextPath }/${authUser.id }/adminn/basic">블로그 관리</a></li>
+						<li><a href="${pageContext.request.contextPath }/${authUser.id }/admin/basic">블로그 관리</a></li>
 					</c:otherwise>
 				</c:choose>
 			</ul>
