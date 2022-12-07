@@ -12,7 +12,12 @@ import com.bitacademy.jblog.vo.UserVo;
 @Controller
 @RequestMapping("/{id:(?!assets).*}")  // assets 없어도되고 있어도되고 assets으로 시작하지 않는 모든 것
 public class BlogController {
-
+	
+	@RequestMapping()
+	public String index() {
+		return "redirect:/WEB-INF/views/blog/index";
+	}
+	
 	@RequestMapping({"", "/{pathNo1}", "/{pathNo1}/{pathNo2}"})
 	public String index(
 			@PathVariable("id") String id,
@@ -28,10 +33,10 @@ public class BlogController {
 			postNo = pathNo2.get();
 		} else {
 			// 디폴트
-			return"blog/index";
+			return "blog/index";
 		}
 		
-		return"blog/index";
+		return "blog/index";
 	}
 	
 	@RequestMapping({"/admin", "/admin/basic"})
