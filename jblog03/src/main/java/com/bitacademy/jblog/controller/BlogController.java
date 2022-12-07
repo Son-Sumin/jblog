@@ -13,11 +13,6 @@ import com.bitacademy.jblog.vo.UserVo;
 @RequestMapping("/{id:(?!assets).*}")  // assets 없어도되고 있어도되고 assets으로 시작하지 않는 모든 것
 public class BlogController {
 	
-	@RequestMapping()
-	public String index() {
-		return "redirect:/WEB-INF/views/blog/index";
-	}
-	
 	@RequestMapping({"", "/{pathNo1}", "/{pathNo1}/{pathNo2}"})
 	public String index(
 			@PathVariable("id") String id,
@@ -57,7 +52,7 @@ public class BlogController {
 	@RequestMapping(value="/admin/write", method=RequestMethod.POST)
 	public String adminWrite(
 			@PathVariable("id") String id,
-			UserVo suerVo) {
+			UserVo userVo) {
 		return "redirect:/blog/admin-write";
 	}
 }

@@ -8,11 +8,12 @@
 				<c:when test="${empty authUser }">
 					<li><a href="${pageContext.request.contextPath }/user/login">로그인</a></li>
 					<li><a href="${pageContext.request.contextPath }/user/join">회원가입</a></li>
-					<li><a href="${pageContext.request.contextPath }/aa/admin/basic">내블로그</a></li>
+					<li><a href="${pageContext.request.contextPath }/aa/1/1">내블로그</a></li>
+					<li><a href="${pageContext.request.contextPath }">JBLOG Home</a></li>
 				</c:when>
 				<c:otherwise>
 					<li><a href="${pageContext.request.contextPath }/user/logout">로그아웃</a></li>
-					<li><a href="${pageContext.request.contextPath }/{id}/admin/basic">내블로그</a></li>
+					<li><a href="${pageContext.request.contextPath }/{id}/1/1">내블로그</a></li>
 				</c:otherwise>
 			</c:choose>
 		</ul>

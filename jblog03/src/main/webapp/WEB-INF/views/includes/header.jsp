@@ -7,13 +7,13 @@
 			<ul>
 				<c:choose>
 					<c:when test="${empty authUser }">
+						<li><a href="${pageContext.request.contextPath }">JBLOG Home</a></li>
 						<li><a href="${pageContext.request.contextPath }/user/login">로그인</a></li>
 					</c:when>
 					<c:otherwise>
+						<li><a href="${pageContext.request.contextPath }">JBLOG Home</a></li>
 						<li><a href="${pageContext.request.contextPath }/user/logout">로그아웃</a></li>
-						<c:if test="${authUser.id == userVo.id }">
-							<li><a href="${pageContext.request.contextPath }">블로그 관리</a></li>
-						</c:if>
+						<li><a href="${pageContext.request.contextPath }/admin">블로그 관리</a></li>
 					</c:otherwise>
 				</c:choose>
 			</ul>

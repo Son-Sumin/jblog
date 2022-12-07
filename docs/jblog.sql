@@ -10,9 +10,9 @@ alter table user add column role enum('user', 'admin') default 'user';
 -- insert
 select * from user;
 
-delete from user where name='맹구';
+delete from user where name='짱구';
 
-insert into user values('zzanggu', '짱구', '1234');
+insert into user values('zzanggu', '짱구', '1234', 'user');
 insert into user values('menggu', '맹구', '1234', 'user');
 insert into user values('chulsu', '철수', '1234', 'user');
 insert into user values('admin', '관리자', '1234', 'admin');
