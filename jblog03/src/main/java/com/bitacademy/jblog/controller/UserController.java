@@ -33,7 +33,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("/login")
-	public String login(@PathVariable("id") String id) {
-		return "redirect:/admin-basic";
+	public String login() {
+		return "user/login";
 	}
 }
