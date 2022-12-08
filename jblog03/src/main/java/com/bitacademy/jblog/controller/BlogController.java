@@ -2,16 +2,23 @@ package com.bitacademy.jblog.controller;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.bitacademy.jblog.vo.UserVo;
+import com.bitacademy.jblog.service.BlogService;
+import com.bitacademy.jblog.service.PostService;
+import com.bitacademy.jblog.vo.PostVo;
 
 @Controller
 @RequestMapping("/{id:(?!assets).*}")  // assets 없어도되고 있어도되고 assets으로 시작하지 않는 모든 것
 public class BlogController {
+	@Autowired
+	private BlogService blogService;
+	@Autowired
+	private PostService postService;
 	
 	@RequestMapping({"", "/{pathNo1}", "/{pathNo1}/{pathNo2}"})
 	public String index(
@@ -23,14 +30,10 @@ public class BlogController {
 		
 		if(pathNo1.isPresent()) {
 			categoryNo = pathNo1.get();
-		} else if(pathNo2.isPresent()) {
+		} else if (pathNo2.isPresent()) {
 			categoryNo = pathNo1.get();
 			postNo = pathNo2.get();
-		} else {
-			// 디폴트
-			return "blog/index";
 		}
-		
 		return "blog/index";
 	}
 	
@@ -52,7 +55,8 @@ public class BlogController {
 	@RequestMapping(value="/admin/write", method=RequestMethod.POST)
 	public String adminWrite(
 			@PathVariable("id") String id,
-			UserVo userVo) {
-		return "redirect:/blog/admin-write";
+			PostVo postVo) {
+		postService.addContents(postVo);
+		return "redirect:/blog/admin-category";
 	}
 }

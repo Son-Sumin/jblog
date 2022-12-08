@@ -24,10 +24,10 @@
 				      			<select name="category">
 				      				<option>미분류</option>
 				      				<option>자바</option>
+				      				<option>스프링 스터디</option>
+				      				<option>스프링 프로젝트</option>
 				      				<option>Spring</option>
 				      				<option>Spring Boot</option>
-				      				<option>Spring Secerity</option>
-				      				<option>AOP</option>
 				      			</select>
 				      		</td>
 			      		</tr>
