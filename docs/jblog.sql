@@ -28,3 +28,15 @@ select id, name, role
 select * from blog; 
 
 insert into blog values('menggu', '맹구의블로그', 'profile');
+
+
+-- CATEGORY----------------------------
+select * from category; 
+
+insert into category values(null, '맹구 카테고리', 'menggu');
+
+
+-- POST----------------------------
+select * from post; 
+
+insert into post values(null, '오늘의 메뉴', '찜닭찜닭', now(), '1');
