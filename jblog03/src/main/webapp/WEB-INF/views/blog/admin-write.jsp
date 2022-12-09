@@ -39,7 +39,7 @@
 			      			<td>&nbsp;</td>
 			      			<td class="s"><input type="submit" value="포스트하기"></td>
 			      			<td>&nbsp;</td>
-			      			<td id="c"><a href="${pageContext.request.contextPath }/${authUser.id }/admin/basic">취소</a></td>
+			      			<td class="c"><a href="${pageContext.request.contextPath }/${authUser.id }/admin/basic">취소</a></td>
 			      		</tr>
 			      	</table>
 				</form>

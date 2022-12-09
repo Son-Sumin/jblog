@@ -11,8 +11,8 @@ public class PostService {
 	@Autowired
 	private PostRepository postRepository;
 	
-	public void addContents(PostVo postVo) {
-		postRepository.insert(postVo);	
+	public boolean addContents(PostVo postVo) {
+		return postRepository.insert(postVo) == 1;	
 	}
 
 }
