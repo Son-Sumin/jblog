@@ -14,8 +14,8 @@
 		<c:import url="/WEB-INF/views/includes/logo-menu.jsp"></c:import>
 		<form class="search-form">
 			<fieldset>
-				<input type="text" name="keyword" />
-				<input type="submit" value="검색" placeholder="검색어 입력"/>
+				<input type="text" name="keyword"  placeholder="검색어 입력"/>
+				<input type="submit" value="검색" />
 			</fieldset>
 			<fieldset>
 				<input type="radio" name="which" value="blog-title"> <label>블로그 제목</label>
