@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!doctype html>
 <html>
@@ -14,15 +15,36 @@
 		<c:import url="/WEB-INF/views/includes/logo-menu.jsp"></c:import>
 		<form class="join-form" id="join-form" method="post" action="${pageContext.request.contextPath}/user/join">
 			<label class="block-label" for="name"><spring:message code="Join.form.label.name" /></label>
-			<input id="name"name="name" type="text" value="">
+			<input id="name" name="name" type="text" value="">
+			<p style="text-align: left; padding: 2px 0 2px 0; color: red">
+				<spring:hasBindErrors name="userVo">
+					<c:if test="${errors.hasFieldErrors('name') }">
+						<spring:message code="${errors.getFieldError('name').codes[0] }" />
+					</c:if> 
+				</spring:hasBindErrors>
+			</p>
 			
 			<label class="block-label" for="blog-id">아이디</label>
-			<input id="blog-id" name="id" type="text" value=""> 
+			<input id="blog-id" name="id" type="text" value="">
+			<p style="text-align: left; padding: 2px 0 2px 0; color: red">
+				<spring:hasBindErrors name="userVo">
+					<c:if test="${errors.hasFieldErrors('id') }">
+						<spring:message code="${errors.getFieldError('id').codes[0] }" />
+					</c:if> 
+				</spring:hasBindErrors>
+			</p> 
 			<input id="btn-checkemail" type="button" value="id 중복체크">
 			<img id="img-checkemail" style="display: none;" src="${pageContext.request.contextPath}/assets/images/check.png">
 
 			<label class="block-label" for="password">패스워드</label>
 			<input id="password" name="password" type="password" value="" />
+			<p style="text-align: left; padding: 2px 0 2px 0; color: red">
+				<spring:hasBindErrors name="userVo">
+					<c:if test="${errors.hasFieldErrors('password') }">
+						<spring:message code="${errors.getFieldError('password').codes[0] }" />
+					</c:if> 
+				</spring:hasBindErrors>
+			</p>
 
 			<fieldset>
 				<legend>약관동의</legend>
