@@ -15,7 +15,7 @@
 		<form class="search-form">
 			<fieldset>
 				<input type="text" name="keyword" />
-				<input type="submit" value="검색" />
+				<input type="submit" value="검색" placeholder="검색어 입력"/>
 			</fieldset>
 			<fieldset>
 				<input type="radio" name="which" value="blog-title"> <label>블로그 제목</label>
