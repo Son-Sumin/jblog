@@ -28,7 +28,10 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/join", method=RequestMethod.POST)
-	public String join(@ModelAttribute @Valid UserVo userVo, BindingResult result, Model model) {
+	public String join(
+			@ModelAttribute @Valid UserVo userVo,
+			BindingResult result,
+			Model model) {
 		if(result.hasErrors()) {
 			List<ObjectError> errors = result.getAllErrors();
 			for(ObjectError error : errors) {
