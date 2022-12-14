@@ -15,7 +15,7 @@
 		<div id="wrapper">
 			<div id="content" class="full-screen">
 				<c:import url="/WEB-INF/views/includes/admin-menu.jsp"></c:import>
-				<form action="" method="post">
+				<form action="${pageContext.request.contextPath }/{authUser.id }/admin/basic" method="post">
 	 		      	<table class="admin-config">
 			      		<tr>
 			      			<td class="t">블로그 제목</td>

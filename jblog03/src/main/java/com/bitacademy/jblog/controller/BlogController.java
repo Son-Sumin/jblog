@@ -9,14 +9,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.bitacademy.jblog.service.BlogService;
+import com.bitacademy.jblog.service.CategoryService;
 import com.bitacademy.jblog.service.PostService;
 import com.bitacademy.jblog.vo.PostVo;
+
 
 @Controller
 @RequestMapping("/{id:(?!assets).*}")  // assets 없어도되고 있어도되고 assets으로 시작하지 않는 모든 것
 public class BlogController {
 	@Autowired
 	private BlogService blogService;
+	
+	@Autowired
+	private CategoryService categoryService;
+	
 	@Autowired
 	private PostService postService;
 	

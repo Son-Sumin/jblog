@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.bitacademy.jblog.service.BlogService;
+import com.bitacademy.jblog.service.CategoryService;
 import com.bitacademy.jblog.service.UserService;
+import com.bitacademy.jblog.vo.BlogVo;
+import com.bitacademy.jblog.vo.CategoryVo;
 import com.bitacademy.jblog.vo.UserVo;
 
 @Controller
@@ -21,6 +25,12 @@ import com.bitacademy.jblog.vo.UserVo;
 public class UserController {
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private BlogService blogService;
+	
+	@Autowired
+	private CategoryService categoryService;
 
 	@RequestMapping(value="/join", method=RequestMethod.GET)
 	public String join(@ModelAttribute UserVo userVo) {
@@ -31,7 +41,9 @@ public class UserController {
 	public String join(
 			@ModelAttribute @Valid UserVo userVo,
 			BindingResult result,
-			Model model) {
+			Model model,
+			BlogVo blogVo,
+			CategoryVo categoryVo) {
 		if(result.hasErrors()) {
 			List<ObjectError> errors = result.getAllErrors();
 			for(ObjectError error : errors) {
@@ -41,6 +53,8 @@ public class UserController {
 			return "user/join";
 		}
 		userService.join(userVo);
+		blogService.addBlog(blogVo);
+		//categoryService.addCategory(categoryVo);
 		return "redirect:/user/joinsuccess";
 	}
 	

@@ -5,7 +5,7 @@
 	<insert id="insert" parameterType="blogvo">
 		<![CDATA[
 		insert into blog
-		values(#{id }, #{title }, #{profile });
+		values(#{id }, null, #{title }, #{profile });
 		]]>
 	</insert>
 </mapper>
