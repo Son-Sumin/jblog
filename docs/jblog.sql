@@ -30,12 +30,17 @@ select id, name, role
 select * from blog; 
 
 insert into blog values('menggu', '맹구의블로그', 'profile');
+insert into blog values('menggu', concat('맹구','의블로그'), 'profile');
+
+delete from blog where id='menggu';
 
 
 -- CATEGORY----------------------------
 select * from category; 
 
 insert into category values(null, '맹구 카테고리', 'menggu');
+insert into category
+		values(null, 'first category', 'pororo');
 
 
 -- POST----------------------------
