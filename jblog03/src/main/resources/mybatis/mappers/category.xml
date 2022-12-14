@@ -5,7 +5,7 @@
 	<insert id="insert" parameterType="categoryvo">
 		<![CDATA[
 		insert into category
-		values(null, #{title }, #{id });
+		values(null, 'first category', #{id });
 		]]>
 	</insert>
 </mapper>

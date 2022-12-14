@@ -91,7 +91,7 @@ div#content .admin-cat					{ border:none; width:720px; margin-top:30px }
 
 .admin-config td.t						{ padding:5px 0; width:75px }
 .admin-config td.s						{ padding:20px 0 10px 0; }
-.admin-config img						{ width:120px; border:1px solid #bbb }
+.admin-config img						{ width:120px; border:1px solid #bbb; cursor: pointer }
 
 .admin-cat								{ border:1px solid #777; border-collapse:collapse }
 .admin-cat th, .admin-cat td			{ border:1px solid #777; padding:6px }

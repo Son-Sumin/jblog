@@ -14,9 +14,8 @@ public class UserRepository {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public boolean insert(UserVo userVo) {
-		int count = sqlSession.insert("user.insert", userVo);
-		return count == 1;
+	public int insert(UserVo userVo) {
+		return sqlSession.insert("user.insert", userVo);
 	}
 	
 	public UserVo findByIdPassword(String id, String password) {

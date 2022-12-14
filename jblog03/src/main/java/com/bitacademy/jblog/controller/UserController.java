@@ -25,12 +25,6 @@ import com.bitacademy.jblog.vo.UserVo;
 public class UserController {
 	@Autowired
 	private UserService userService;
-	
-	@Autowired
-	private BlogService blogService;
-	
-	@Autowired
-	private CategoryService categoryService;
 
 	@RequestMapping(value="/join", method=RequestMethod.GET)
 	public String join(@ModelAttribute UserVo userVo) {
@@ -52,9 +46,7 @@ public class UserController {
 			model.addAllAttributes(result.getModel());
 			return "user/join";
 		}
-		userService.join(userVo);
-		blogService.addBlog(blogVo);
-		//categoryService.addCategory(categoryVo);
+		userService.join(userVo, blogVo, categoryVo);
 		return "redirect:/user/joinsuccess";
 	}
 	
