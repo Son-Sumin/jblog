@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.bitacademy.jblog.service.BlogService;
-import com.bitacademy.jblog.service.CategoryService;
 import com.bitacademy.jblog.service.UserService;
 import com.bitacademy.jblog.vo.BlogVo;
 import com.bitacademy.jblog.vo.CategoryVo;
@@ -47,6 +45,9 @@ public class UserController {
 			return "user/join";
 		}
 		userService.join(userVo, blogVo, categoryVo);
+		System.out.println(userVo);
+		System.out.println(blogVo);
+		System.out.println(categoryVo);
 		return "redirect:/user/joinsuccess";
 	}
 	

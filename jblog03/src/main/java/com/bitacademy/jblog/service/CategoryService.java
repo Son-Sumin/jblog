@@ -1,5 +1,7 @@
 package com.bitacademy.jblog.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +15,9 @@ public class CategoryService {
 
 	public void addBlog(CategoryVo categoryVo) {
 		categoryRepository.insert(categoryVo);
+	}
+
+	public List<CategoryVo> getCategoryList() {
+		return categoryRepository.findAll();
 	}
 }
