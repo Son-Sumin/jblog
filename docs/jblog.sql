@@ -38,9 +38,14 @@ delete from blog where id='menggu';
 -- CATEGORY----------------------------
 select * from category; 
 
-insert into category values(null, '맹구 카테고리', 'menggu');
+insert into category values(null, '맹구 카테고리', 0, '맹구맹구', 'menggu');
 insert into category
 		values(null, 'first category', 'pororo');
+       
+select a.no, a.title, a.num_post as numPost, a.sumup_category as sumupCategory, b.id
+  from category a, blog b
+ where a.id = b.id
+ order by a.no desc;
 
 
 -- POST----------------------------
