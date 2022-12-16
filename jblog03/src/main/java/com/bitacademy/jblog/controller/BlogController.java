@@ -55,6 +55,14 @@ public class BlogController {
 		return "blog/admin-category";
 	}
 	
+	@RequestMapping("/admin/category/delete/{no}")
+	public String adminCategory(
+			@PathVariable("id") String id,
+			@PathVariable("no") Long no) {
+		//categoryService.deleteCategory(id, no);
+		return "redirect:/blog/admin-category";
+	}
+	
 	@RequestMapping(value="/admin/write", method=RequestMethod.GET)
 	public String adminWrite(@PathVariable("id") String id) {
 		return "blog/admin-write";
