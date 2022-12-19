@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.bitacademy.jblog.service.BlogService;
 import com.bitacademy.jblog.service.CategoryService;
 import com.bitacademy.jblog.service.PostService;
+import com.bitacademy.jblog.vo.CategoryVo;
 import com.bitacademy.jblog.vo.PostVo;
 
 
@@ -49,10 +50,16 @@ public class BlogController {
 		return "blog/admin-basic";
 	}
 	
-	@RequestMapping("/admin/category")
+	@RequestMapping(value="/admin/category", method=RequestMethod.GET)
 	public String adminCategory(@PathVariable("id") String id, Model model) {
 		model.addAttribute("categorylist", categoryService.getCategoryList());
 		return "blog/admin-category";
+	}
+	
+	@RequestMapping(value="/admin/category", method=RequestMethod.POST)
+	public String adminCategory(@PathVariable("id") String id, CategoryVo categoryVo) {
+		categoryService.addCategory(categoryVo);
+		return "redirect:/blog/admin-category";
 	}
 	
 	@RequestMapping("/admin/category/delete/{no}")

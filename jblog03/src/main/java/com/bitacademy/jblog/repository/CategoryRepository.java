@@ -13,12 +13,15 @@ public class CategoryRepository {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public int insert(CategoryVo categoryVo) {
+	public int insertInit(CategoryVo categoryVo) {
 		return sqlSession.insert("category.insert", categoryVo);
-		
 	}
 	
 	public List<CategoryVo> findAll() {
 		return sqlSession.selectList("category.findAll");
+	}
+	
+	public int insert(CategoryVo categoryVo) {
+		return sqlSession.insert("category.insert", categoryVo);
 	}
 }

@@ -14,10 +14,14 @@ public class CategoryService {
 	private CategoryRepository categoryRepository;
 
 	public void addBlog(CategoryVo categoryVo) {
-		categoryRepository.insert(categoryVo);
+		categoryRepository.insertInit(categoryVo);
 	}
 
 	public List<CategoryVo> getCategoryList() {
 		return categoryRepository.findAll();
+	}
+
+	public void addCategory(CategoryVo categoryVo) {
+		categoryRepository.insert(categoryVo);
 	}
 }
