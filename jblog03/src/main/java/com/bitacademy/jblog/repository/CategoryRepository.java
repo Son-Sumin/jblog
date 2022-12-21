@@ -14,7 +14,7 @@ public class CategoryRepository {
 	private SqlSession sqlSession;
 
 	public int insertInit(CategoryVo categoryVo) {
-		return sqlSession.insert("category.insert", categoryVo);
+		return sqlSession.insert("category.insertInit", categoryVo);
 	}
 	
 	public List<CategoryVo> findAll() {

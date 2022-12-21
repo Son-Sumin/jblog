@@ -16,7 +16,7 @@
 	
 	<select id="findAll" resultType="categoryvo">
 	<![CDATA[
-	select a.no, a.title, a.num_post as numPost, a.sumup_category as sumupCategory, b.id
+	select a.no, a.title, a.num_post as numPost, a.desc, b.id
       from category a, blog b
      where a.id = b.id
     order by a.no desc
@@ -26,7 +26,7 @@
 	<insert id="insert" parameterType="categoryvo">
 		<![CDATA[
 		insert into category
-		values(null, #{title }, '0', #{sumupCategory }, #{id })
+		values(null, #{title }, '0', #{desc }, #{id })
 		]]>
 		<selectKey keyProperty="no" resultType="long" order="AFTER">
 	 		<![CDATA[

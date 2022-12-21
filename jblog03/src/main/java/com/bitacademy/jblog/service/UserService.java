@@ -28,7 +28,7 @@ public class UserService {
 		
 		userRepository.insert(userVo);
 		blogRepository.insert(blogVo);
-		categoryRepository.insert(categoryVo);
+		categoryRepository.insertInit(categoryVo);
 	}
 
 	public UserVo findId(String id, String password) {

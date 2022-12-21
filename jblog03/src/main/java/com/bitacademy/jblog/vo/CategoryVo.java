@@ -4,7 +4,7 @@ public class CategoryVo {
 	private long no;
 	private String title;
 	private long numPost;
-	private String sumupCategory;
+	private String desc;
 	private String id;
 	
 	public long getNo() {
@@ -25,11 +25,11 @@ public class CategoryVo {
 	public void setNumPost(long numPost) {
 		this.numPost = numPost;
 	}
-	public String getSumupCategory() {
-		return sumupCategory;
+	public String getDesc() {
+		return desc;
 	}
-	public void setSumupCategory(String sumupCategory) {
-		this.sumupCategory = sumupCategory;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 	public String getId() {
 		return id;
@@ -37,10 +37,9 @@ public class CategoryVo {
 	public void setId(String id) {
 		this.id = id;
 	}
-	
 	@Override
 	public String toString() {
-		return "CategoryVo [no=" + no + ", title=" + title + ", numPost=" + numPost + ", sumupCategory=" + sumupCategory
-				+ ", id=" + id + "]";
+		return "CategoryVo [no=" + no + ", title=" + title + ", numPost=" + numPost + ", desc=" + desc + ", id=" + id
+				+ "]";
 	}
 }
