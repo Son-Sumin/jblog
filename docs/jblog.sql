@@ -52,4 +52,4 @@ delete from category where no = 3;
 -- POST----------------------------
 select * from post; 
 
-insert into post values(null, '오늘의 메뉴', '찜닭찜닭', now(), '1');
+insert into post values(null, '오늘의 메뉴', '찜닭찜닭', now(), '2');
