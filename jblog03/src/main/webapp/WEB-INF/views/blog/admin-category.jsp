@@ -27,9 +27,9 @@
 		      		<c:forEach items='${categorylist }' var='categoryvo' varStatus='status'>
 						<tr>
 							<td>[${count-status.index}]</td>
-							<td>first category</td>
+							<td>${categoryvo.title }</td>
 							<td>0</td>
-							<td>This is my first category</td>
+							<td>${categoryvo.desc }</td>
 							<td><a href="${pageContext.request.contextPath }/${categoryvo.id }/admin/category/delete/${categoryvo.no }" class="del">
 								<img src="${pageContext.request.contextPath}/assets/images/delete.jpg"></a>
 							</td>
@@ -38,7 +38,7 @@
 				</table>
       	
       			<h4 class="n-c">새로운 카테고리 추가</h4>
-      			<form class="catogory-form" method="post" action="${pageContext.request.contextPath }/${authUser.id }/admin/category">
+      			<form class="catogory-form" method="post" action="${pageContext.request.contextPath }/${authUser.id }/admin/category/${categoryvo. no}">
 		      	<table id="admin-cat-add">
 		      		<tr>
 		      			<td class="t">카테고리명</td>

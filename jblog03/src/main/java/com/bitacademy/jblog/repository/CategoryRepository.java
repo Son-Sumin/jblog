@@ -24,4 +24,9 @@ public class CategoryRepository {
 	public int insert(CategoryVo categoryVo) {
 		return sqlSession.insert("category.insert", categoryVo);
 	}
+
+	public int deleteByNo(Long no) {
+		return sqlSession.delete("category.delete", no);
+		
+	}
 }

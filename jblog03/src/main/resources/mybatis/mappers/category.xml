@@ -15,12 +15,12 @@
 	</insert>
 	
 	<select id="findAll" resultType="categoryvo">
-	<![CDATA[
-	select a.no, a.title, a.num_post as numPost, a.desc, b.id
-      from category a, blog b
-     where a.id = b.id
-    order by a.no desc
-	]]>
+		<![CDATA[
+		select a.no, a.title, a.num_post as numPost, a.desc, b.id
+	      from category a, blog b
+	     where a.id = b.id
+	    order by a.no desc
+		]]>
 	</select>
 	
 	<insert id="insert" parameterType="categoryvo">
@@ -34,4 +34,10 @@
 	 		]]>
 		</selectKey>
 	</insert>
+	
+	<select id="delete" resultType="categoryvo">
+		<![CDATA[
+		delete from category where no = #{no }
+		]]>
+	</select>
 </mapper>
