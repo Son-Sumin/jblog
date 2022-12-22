@@ -17,7 +17,7 @@ public class UserVo {
 	@Length(min=4, max=16)
 	private String password;
 	private String role;
-//	private String blogTitle;
+	//private String blogTitle;
 //	private String blogProfile;
 //	private long categoryNo;
 //	private String categoryTitle;

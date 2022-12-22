@@ -80,6 +80,7 @@ public class BlogController {
 	@Auth
 	@RequestMapping(value="/admin/write", method=RequestMethod.GET)
 	public String adminWrite(@PathVariable("id") String id) {
+		System.out.println(id);
 		return "blog/admin-write";
 	}
 	
@@ -89,6 +90,6 @@ public class BlogController {
 			@PathVariable("id") String id,
 			PostVo postVo) {
 		postService.addContents(postVo);
-		return "redirect:/blog/admin-category";
+		return "redirect:/" + id + "/admin/category";
 	}
 }

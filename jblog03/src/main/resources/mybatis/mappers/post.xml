@@ -5,7 +5,7 @@
 	<insert id="insert" parameterType="postvo">
 		<![CDATA[
 		insert into post
-		values(null, #{title }, #{contents }, now(), 1);
+		values(null, #{title }, #{contents }, now(), #{categoryNo });
 		]]>
 	</insert>
 </mapper>
