@@ -47,6 +47,7 @@ select a.no, a.title, a.num_post as numPost, a.desc, b.id
  where a.id = b.id
  order by a.no desc;
 
+delete from category where no = 3;
 
 -- POST----------------------------
 select * from post; 
