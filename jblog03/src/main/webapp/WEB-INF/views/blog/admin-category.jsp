@@ -38,7 +38,7 @@
 				</table>
       	
       			<h4 class="n-c">새로운 카테고리 추가</h4>
-      			<form class="catogory-form" method="post" action="${pageContext.request.contextPath }/${id }/admin/category">
+      			<form class="catogory-form" method="post" action="${pageContext.request.contextPath }/${authUser.id }/admin/category">
 		      	<table id="admin-cat-add">
 		      		<tr>
 		      			<td class="t">카테고리명</td>

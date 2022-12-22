@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.bitacademy.jblog.security.Auth;
 import com.bitacademy.jblog.service.BlogService;
 import com.bitacademy.jblog.service.CategoryService;
 import com.bitacademy.jblog.service.PostService;
@@ -45,24 +46,29 @@ public class BlogController {
 		return "blog/index";
 	}
 	
+	@Auth
 	@RequestMapping({"/admin", "/admin/basic"})
 	public String adminBasic(@PathVariable("id") String id) {
 		return "blog/admin-basic";
 	}
 	
+	@Auth
 	@RequestMapping(value="/admin/category", method=RequestMethod.GET)
 	public String adminCategory(@PathVariable("id") String id, Model model) {
 		model.addAttribute("categorylist", categoryService.getCategoryList());
+		System.out.println(id);
 		return "blog/admin-category";
 	}
 	
+	@Auth
 	@RequestMapping(value="/admin/category", method=RequestMethod.POST)
 	public String adminCategory(@PathVariable("id") String id, CategoryVo categoryVo) {
 		categoryService.addCategory(categoryVo);
 		System.out.println(categoryVo);
-		return "redirect:/" + id + "blog/admin-category";
+		return "redirect:/" + id + "/admin/category";
 	}
 	
+	@Auth
 	@RequestMapping("/admin/category/delete/{no}")
 	public String adminCategory(
 			@PathVariable("id") String id,
@@ -71,11 +77,13 @@ public class BlogController {
 		return "redirect:/blog/admin-category";
 	}
 	
+	@Auth
 	@RequestMapping(value="/admin/write", method=RequestMethod.GET)
 	public String adminWrite(@PathVariable("id") String id) {
 		return "blog/admin-write";
 	}
 	
+	@Auth
 	@RequestMapping(value="/admin/write", method=RequestMethod.POST)
 	public String adminWrite(
 			@PathVariable("id") String id,
