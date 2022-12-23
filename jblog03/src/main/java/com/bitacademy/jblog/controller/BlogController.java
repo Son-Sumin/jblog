@@ -92,6 +92,7 @@ public class BlogController {
 			PostVo postVo,
 			@RequestParam(value="categoryNo", required=true) Long no) {
 		postVo.setCategoryNo(no);
+		categoryService.updateNumPost(no);
 		postService.addContents(postVo);
 		return "redirect:/" + id + "/admin/category";
 	}
