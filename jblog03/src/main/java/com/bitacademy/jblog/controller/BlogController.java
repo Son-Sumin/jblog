@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bitacademy.jblog.security.Auth;
 import com.bitacademy.jblog.service.BlogService;
@@ -88,7 +89,9 @@ public class BlogController {
 	@RequestMapping(value="/admin/write", method=RequestMethod.POST)
 	public String adminWrite(
 			@PathVariable("id") String id,
-			PostVo postVo) {
+			PostVo postVo,
+			@RequestParam(value="categoryNo", required=true) Long no) {
+		postVo.setCategoryNo(no);
 		postService.addContents(postVo);
 		return "redirect:/" + id + "/admin/category";
 	}
