@@ -40,4 +40,12 @@
 		delete from category where no = #{no }
 		]]>
 	</select>
+	
+	<update id="updateNumPost" parameterType="categoryvo">
+	 	<![CDATA[
+	 	update category
+		   set numPost = numPost+1
+		 where no = #{no }
+	 	]]>
+	</update>
 </mapper>

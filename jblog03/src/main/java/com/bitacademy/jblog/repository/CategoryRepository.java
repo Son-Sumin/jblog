@@ -27,6 +27,10 @@ public class CategoryRepository {
 
 	public int deleteByNo(Long no) {
 		return sqlSession.delete("category.delete", no);
+	}
+
+	public int updateNumPost(Long no) {
+		return sqlSession.update("category.updateNumPost", no);
 		
 	}
 }

@@ -22,12 +22,9 @@
 			      			<td>
 			      				<input type="text" size="60" name="title" value="제목입력">
 				      			<select name="category">
-				      				<option>미분류</option>
-				      				<option>자바</option>
-				      				<option>스프링 스터디</option>
-				      				<option>스프링 프로젝트</option>
-				      				<option>Spring</option>
-				      				<option>Spring Boot</option>
+				      			<c:forEach items='${categorylist }' var='categoryvo' varStatus='status'>			      			
+				      				<option value=${categoryvo.no }>${categoryvo.title }</option>
+								</c:forEach>
 				      			</select>
 				      		</td>
 			      		</tr>

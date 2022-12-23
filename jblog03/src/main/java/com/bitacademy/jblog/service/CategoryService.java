@@ -27,6 +27,9 @@ public class CategoryService {
 
 	public void deleteCategory(Long no) {
 		categoryRepository.deleteByNo(no);
-		
+	}
+	
+	public void updateNumPost(Long no) {
+		categoryRepository.updateNumPost(no);
 	}
 }
