@@ -14,4 +14,9 @@ public class BlogService {
 	public void addBlog(BlogVo blogVo) {
 		blogRepository.insert(blogVo);
 	}
+
+	public void updateImages(BlogVo blogVo) {
+		// TODO Auto-generated method stub
+		
+	}
 }

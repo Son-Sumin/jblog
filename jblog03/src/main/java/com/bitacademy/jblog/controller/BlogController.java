@@ -9,11 +9,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.bitacademy.jblog.security.Auth;
 import com.bitacademy.jblog.service.BlogService;
 import com.bitacademy.jblog.service.CategoryService;
+import com.bitacademy.jblog.service.FileUploadService;
 import com.bitacademy.jblog.service.PostService;
+import com.bitacademy.jblog.vo.BlogVo;
 import com.bitacademy.jblog.vo.CategoryVo;
 import com.bitacademy.jblog.vo.PostVo;
 
@@ -29,6 +32,9 @@ public class BlogController {
 	
 	@Autowired
 	private PostService postService;
+	
+	@Autowired
+	private FileUploadService fileUploadService;
 	
 	@RequestMapping({"", "/{pathNo1}", "/{pathNo1}/{pathNo2}"})
 	public String index(
@@ -95,5 +101,20 @@ public class BlogController {
 		categoryService.updateNumPost(no);
 		postService.addContents(postVo);
 		return "redirect:/" + id + "/admin/category";
+	}
+	
+	@Auth
+	@RequestMapping("/upload")
+	public String upload(
+			@RequestParam("file") MultipartFile multipartFile,
+			BlogVo blogVo) {
+		String profile = fileUploadService.restore(multipartFile);
+		
+		blogVo.setProfile(profile);
+		blogService.updateImages(blogVo);
+		
+		//model.addAttribute("url", url);
+		//model.addAttribute("galleryVo", galleryVo);
+		return "redirect:/gallery";
 	}
 }
