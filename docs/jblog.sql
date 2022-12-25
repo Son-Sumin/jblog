@@ -17,8 +17,6 @@ insert into user values('menggu', '맹구', '1234', 'user');
 insert into user values('chulsu', '철수', '1234', 'user');
 insert into user values('admin', '관리자', '1234', 'admin');
 
--- insert into;
-
 -- select
 select id, name, role
   from user
